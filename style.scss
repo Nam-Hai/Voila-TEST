@@ -112,6 +112,11 @@ nav {
             transform: translateY(-200%);
         }
     }
+
+    transition: color 300ms;
+    &:hover {
+        color: $primary
+    }
 }
 main {
     // grid-template-rows:repeat(2,1fr) ;
