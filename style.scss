@@ -18,34 +18,7 @@ body {
     top: 0;
     width: 100%;
 }
-.fake__loader {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    background-color: $primary;
-    z-index: 4;
-    // transform: translateY(-79%);
-    font-weight: 900;
-    font-size: 220px;
-    .fake__loader__n {
-        right: 3rem;
-        bottom: 0rem;
-        display: flex;
-        // margin: -3rem 0;
-        height: 200px;
-        position: absolute;
-        span span {
-            height: 100%;
-            margin-top: -2rem;
-            transform: translateY(100%);
-        }
-    }
-    .fake__loader__n:first-child span span {
-        transform: translateY(0);
-    }
-}
+
 
 
 .grid {
