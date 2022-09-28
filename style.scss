@@ -35,6 +35,8 @@ body {
 $nav-height: 2.5rem;
 $nav-margin-top: 2.25rem;
 nav {
+    z-index: 2;
+    position: relative;
     transform: translateY(-80px);
     margin-top: $nav-margin-top;
     height: $nav-height;
@@ -97,6 +99,7 @@ nav {
     }
 }
 main {
+    z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
