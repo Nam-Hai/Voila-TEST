@@ -1,29 +1,92 @@
 import { N } from "../utils/namhai"
 const DURATION = 700
-const TDURATION = 500
+const TDELAY = 1500
+const OFFSET = 300
+const TDURATION = 400
+const DELAY = 200
+const EASE = 'io2'
 export default class TitleInitAnimation {
-    constructor() {
+    constructor(s) {
         this.tl = new N.TL
+        this.wrapper = N.get('h1')
         this.titleLines = N.getAll('h1 > div')
 
-
-        for (const line of Object.values(this.titleLines)) {
-            let letters = N.getAll('span span', line)
+        for (const lineIndex of Object.keys(this.titleLines)) {
+            let letters = N.getAll('div>span', this.titleLines[lineIndex])
+            let x = 0
             for (const index of Object.keys(letters)) {
-                this.tl.from({
-                    el: letters[index],
-                    p: {
-                        y: [100, 0]
-                    },
-                    delay: index * DURATION / letters.length,
-                    d: TDURATION,
-                    e: 'o4'
-                })
-            }
+                const dLetter = N.get('span', letters[index]),
+                    size = {
+                        height: dLetter.clientHeight,
+                        // width: dLetter.scrollWidth,
+                        widthCont: letters[index].clientWidth,
+                        width: letters[index].clientWidth
+                    }
 
+                console.log(size);
+                N.T(letters[index], x, 0, 'px')
+                x += size.width - 0.03 * 220
+                letters[index].style.width = `${size.width}px`
+                dLetter.style.width = `${size.width}px`
+
+                N.T(dLetter, 0, lineIndex ? 200 : 100)
+            }
+        }
+
+        let line1 = N.getAll('span span', this.titleLines[0])
+        let line2 = N.getAll('span span', this.titleLines[1])
+        console.log('line1', line1);
+        for (const i of Object.keys(line1)) {
+            this.tl.from({
+                el: line1[i],
+                p: {
+                    y: [100, 50]
+                },
+                d: TDURATION,
+                e: EASE,
+                delay: i * DELAY / line1.length
+            })
+
+            this.tl.from({
+                el: line1[i],
+                p: {
+                    y: [50, 0]
+                },
+                d: TDURATION,
+                e: EASE,
+                delay: TDELAY + OFFSET + i * DELAY / line1.length
+            })
         }
 
 
+        for (const i of Object.keys(line2)) {
+            this.tl.from({
+                el: line2[i],
+                p: {
+                    y: [100, 0]
+                },
+                d: TDURATION,
+                e: EASE,
+                delay: TDELAY + OFFSET + i * DELAY / line2.length
+            })
+        }
+
+        this.tl.from({
+            el: this.wrapper,
+            p: {
+                y: [70, 0]
+            },
+            d: 1000,
+            e: 'io4',
+            delay: TDELAY
+        })
+
+
+        this.tl.from({
+            delay: DURATION + TDURATION,
+            update: _ => { },
+            cb: _ => s()
+        })
         this.tl.play()
     }
 }

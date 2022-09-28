@@ -8,6 +8,7 @@ export default class InitAnimation {
         this.heroAnime()
         this.switchAnime()
         this.slideButtonAnime()
+        this.contentAnime()
         this.play()
 
     }
@@ -62,6 +63,16 @@ export default class InitAnimation {
                 hero.style.height = N.Lerp(0, 100, t.progE) + '%'
                 heroImg.style.transform = `scale(${N.Lerp(1.3, 1, t.progE)})`
             }
+        })
+    }
+    contentAnime() {
+        this.tl.from({
+            el: N.get('.hero__detail__container'),
+            p: {
+                o: [0, 1]
+            },
+            d: 500,
+            delay: 1200
         })
     }
     play() {

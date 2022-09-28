@@ -5,8 +5,9 @@ import { N } from './utils/namhai'
 async function app() {
     N.TopReload()
 
-
-    new TitleInitAnimation()
+    await new Promise(s => {
+        new TitleInitAnimation(s)
+    })
 
     new InitAnimation()
 }
