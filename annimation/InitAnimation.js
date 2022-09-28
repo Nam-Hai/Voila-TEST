@@ -18,7 +18,6 @@ export default class InitAnimation {
         this.tl.from({
             el: nav,
             d: 500,
-            delay: 700,
             p: {
                 y: [-80, 0, 'px']
             },
@@ -34,7 +33,7 @@ export default class InitAnimation {
                 scaleX: [1, 0]
             },
             d: 500,
-            delay: 1200,
+            delay: 500,
             cb: _ => Object.values(hideAnimation).forEach(div => div.remove())
         })
     }
@@ -47,7 +46,7 @@ export default class InitAnimation {
                 o: [0, 1]
             },
             d: 500,
-            delay: 1200
+            delay: 700
         })
     }
 
@@ -58,7 +57,7 @@ export default class InitAnimation {
         this.tl.from({
             el: heroImg,
             d: 1000,
-            delay: 900,
+            delay: 200,
             e: 'io5',
             update: t => {
                 hero.style.height = N.Lerp(0, 100, t.progE) + '%'
@@ -73,7 +72,7 @@ export default class InitAnimation {
                 o: [0, 1]
             },
             d: 500,
-            delay: 1200
+            delay: 500
         })
     }
     play() {

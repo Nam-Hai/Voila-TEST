@@ -118,7 +118,7 @@ main {
 h1 {
     position: relative;
     z-index: 5;
-    transform: translateY(70%);
+    // transform: translateY(220px);
     margin-left: 8px;
     margin-top: calc(10px + $nav-height +  $nav-margin-top);
     font-style: normal;
@@ -134,9 +134,13 @@ h1 {
         margin-bottom: -220px;
         height: 440px;
         margin-top: -14px;
+
+        span span {
+            transform: translate(50%);
+        }
     }
     .line-2 {
-        top: -32px;
+        top: -34px;
     }
     > div {
         width: 100%;
@@ -159,7 +163,6 @@ h1 {
 
 }
 .doublespan__container span {
-    // transform: translateY(100%);
 }
 @media screen and (max-height: 1300px){
     .hero__wrapper {
