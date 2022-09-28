@@ -160,6 +160,7 @@ h1 {
 }
 @media screen and (max-height: 1300px){
     .hero__wrapper {
+        margin-top: 20px;
         height: calc(40%);
         max-height: 698px;
     }
@@ -188,6 +189,7 @@ h1 {
         // }
         .hero {
             background-image: url('/cover.png');
+            background-size: cover;
             background-position: 50% 50%;
             height: 100%;
             width: 100%;
