@@ -53,7 +53,8 @@ export default class InitAnimation {
 
     heroAnime() {
         let hero = N.get('.hero__cover')
-        let heroImg = N.get('img', hero)
+        // let heroImg = N.get('img', hero)
+        let heroImg = N.get('.hero', hero)
         this.tl.from({
             el: heroImg,
             d: 1000,

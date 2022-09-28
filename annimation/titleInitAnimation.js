@@ -19,11 +19,9 @@ export default class TitleInitAnimation {
                     size = {
                         height: dLetter.clientHeight,
                         // width: dLetter.scrollWidth,
-                        widthCont: letters[index].clientWidth,
                         width: letters[index].clientWidth
                     }
 
-                console.log(size);
                 N.T(letters[index], x, 0, 'px')
                 x += size.width - 0.03 * 220
                 letters[index].style.width = `${size.width}px`
@@ -35,7 +33,6 @@ export default class TitleInitAnimation {
 
         let line1 = N.getAll('span span', this.titleLines[0])
         let line2 = N.getAll('span span', this.titleLines[1])
-        console.log('line1', line1);
         for (const i of Object.keys(line1)) {
             this.tl.from({
                 el: line1[i],
