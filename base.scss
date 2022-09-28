@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+html, body {
+    font-size: 16px;
+    font-family: 'Mark Pro', sans-serif;
+}
+
+a {
+  color: inherit;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+}
+
+.doublespan__container {
+  display: inline-block;
+  overflow: hidden;
+  span {
+    display: block;
+    // pointer-events: none;
+    // user-select: none;
+    // -webkit-user-select: none;
+    // -khtml-user-select: none;
+    // -moz-user-select: none;
+    // -ms-user-select: none;
+  }
+}
