@@ -80,6 +80,12 @@ export default class GalleryInitAnimation {
                 hero.style.height = N.Lerp(20, 100, t.progE) + '%'
                 hero.style.width = N.Lerp(30, 100, t.progE) + '%'
                 heroImg.style.transform = `translate(-50%,-50%) scale(${N.Lerp(1.5, 1, t.progE)})`
+            },
+            cb: _ => {
+                heroImg.style.height = '100%'
+                heroImg.style.width = '100%'
+
+                N.get('.gallery').remove()
             }
         })
 

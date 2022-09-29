@@ -21,9 +21,13 @@ export default class TitleInitAnimation {
                         width: letters[index].clientWidth
                     }
                 N.T(letters[index], x, 0, 'px')
-                x += size.width - 0.0333 * 220
+                if (window.innerHeight > 1300) {
+                    x += size.width - 0.0333 * 220
+                } else {
+                    x += size.width - 0.0333 * 157
+                }
                 letters[index].style.width = `${3 * size.width}px`
-                letters[index].style.height = `${size.height}px`
+                letters[index].style.height = `${size.height * 1.2}px`
                 dLetter.style.width = `${size.width}px`
 
                 // N.T(dLetter, 0, lineIndex == 0 ? 100 : 100)
