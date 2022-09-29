@@ -118,7 +118,7 @@ main {
 h1 {
     position: relative;
     z-index: 5;
-    transform: translateY(120px);
+    // transform: translateY(120px);
     margin-left: 8px;
     margin-top: calc(10px + $nav-height +  $nav-margin-top);
     font-style: normal;
@@ -129,15 +129,22 @@ h1 {
     // letter-spacing: -0.03rem;
     color: $primary;
     max-width: 73.75rem;
+    // height: 440px;
+    perspective: 500px;
+    
     .line-1 {
         // position: absolute;
-        margin-bottom: -220px;
-        height: 440px;
+        // margin-bottom: -220px;
+        // height: 440px;
+        perspective: 65rem;
+
+        transform-origin: bottom center;
         margin-top: -14px;
 
         span span {
-            transform: translate(100%);
+            transform: translate(0%);
         }
+        // margin-bottom: -34px;
     }
     .line-2 {
         top: -34px;
@@ -145,7 +152,6 @@ h1 {
     > div {
         width: 100%;
         height: 220px;
-        margin-bottom: -34px;
         position: relative;
         > span {
             position: absolute;
