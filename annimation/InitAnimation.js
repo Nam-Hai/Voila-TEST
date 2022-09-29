@@ -4,8 +4,8 @@ export default class InitAnimation {
     constructor(link) {
         this.tl = new N.TL()
 
-        this.navAnime()
-        this.heroAnime()
+        // this.navAnime()
+        // this.heroAnime()
         this.switchAnime()
         this.slideButtonAnime()
         this.contentAnime()
@@ -50,21 +50,7 @@ export default class InitAnimation {
         })
     }
 
-    heroAnime() {
-        let hero = N.get('.hero__cover')
-        // let heroImg = N.get('img', hero)
-        let heroImg = N.get('.hero', hero)
-        this.tl.from({
-            el: heroImg,
-            d: 1000,
-            delay: 200,
-            e: 'io5',
-            update: t => {
-                hero.style.height = N.Lerp(0, 100, t.progE) + '%'
-                heroImg.style.transform = `scale(${N.Lerp(1.3, 1, t.progE)})`
-            }
-        })
-    }
+
     contentAnime() {
         this.tl.from({
             el: N.get('.hero__detail__container'),

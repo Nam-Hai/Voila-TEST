@@ -18,13 +18,12 @@ export default class TitleInitAnimation {
                 const dLetter = N.get('span', letters[index]),
                     size = {
                         height: dLetter.clientHeight,
-                        // width: dLetter.scrollWidth,
                         width: letters[index].clientWidth
                     }
-
                 N.T(letters[index], x, 0, 'px')
-                x += size.width - 0.03 * 220
+                x += size.width - 0.0333 * 220
                 letters[index].style.width = `${3 * size.width}px`
+                letters[index].style.height = `${size.height}px`
                 dLetter.style.width = `${size.width}px`
 
                 // N.T(dLetter, 0, lineIndex == 0 ? 100 : 100)
@@ -39,7 +38,7 @@ export default class TitleInitAnimation {
                 y: [100, 0]
 
             },
-            d: TDURATION,
+            d: 750,
             e: 'o2',
         })
         this.tl.from({
@@ -47,16 +46,25 @@ export default class TitleInitAnimation {
             p: {
                 rotateX: [-40, 0]
             },
-            d: TDURATION + 500,
+            d: 750,
             e: 'o5',
         })
+        // this.tl.from({
+        //     el: N.get('.line-2'),
+        //     p: {
+        //         rotateX: [-40, 0]
+        //     },
+        //     d: 750,
+        //     // delay: 50,
+        //     e: 'o3',
+        // })
         this.tl.from({
-            el: N.get('.line-2'),
+            el: N.get('.line-and__wrapper'),
             p: {
                 rotateX: [-40, 0]
             },
-            d: 500,
-            delay: 100,
+            d: 750,
+            // delay: 50,
             e: 'o3',
         })
 
@@ -67,51 +75,46 @@ export default class TitleInitAnimation {
             p: {
                 y: [100, 0]
             },
-            d: TDURATION,
-            e: 'o4',
-            delay: 100
+            d: 750,
+            e: 'o1',
+            // delay: 50
         })
         this.tl.from({
             el: Object.values(line2).slice(1),
             p: {
                 y: [100, 0],
-                x: [80, 0, 'px']
             },
-            d: 1000,
+            d: 850,
             e: 'o6',
-            delay: 200
+            delay: 350
         })
-
-        // for (const i of Object.keys(line2)) {
-
-        // this.tl.from({
-        //     el: line2[i],
-        //     p: {
-        //         y: [100, 0]
-        //     },
-        //     d: TDURATION,
-        //     e: EASE,
-        //     delay: TDELAY + 100 + OFFSET + i * DELAY / line2.length
-        //     // delay: OFFSET + 100 + i * DELAY / line2.length
-        // })
-        // }
-
-        // this.tl.from({
-        //     el: this.wrapper,
-        //     p: {
-        //         y: [120, 0, 'px']
-        //     },
-        //     d: 1000,
-        //     e: 'io2',
-        //     delay: TDELAY
-        // })
-
+        let strat = N.get('.line-strategy__wrapper-translate')
+        const d = 15
+        N.T(strat, d, 0, 'px')
+        this.tl.from({
+            el: strat,
+            p: {
+                x: [d, 0, 'px']
+            },
+            d: 800,
+            e: 'o2',
+            delay: 450
+        })
+        this.tl.from({
+            el: N.get('.line-strategy__wrapper-rotate'),
+            p: {
+                rotateX: [-40, 0]
+            },
+            d: 750,
+            delay: 250,
+            e: 'o3',
+        })
 
         this.tl.from({
             delay: TDURATION,
             // delay: TDURATION,
             update: _ => { },
-            cb: _ => s()
+            // cb: _ => s()
         })
         this.tl.play()
     }
