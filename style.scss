@@ -154,7 +154,7 @@ nav {
         aspect-ratio: 217/320;
     }
     .gallery__image__container:nth-child(3) {
-        left: 23rem;
+        left: 17rem;
         top: 18rem;
         aspect-ratio: 39/32;
     }
@@ -237,20 +237,20 @@ h1 {
 .doublespan__container span {
 }
 @media screen and (max-height: 1300px){
-    h1 {
-        font-size: 157px;
-        margin-top: calc(-22px + $nav-height +  $nav-margin-top);
+    // h1 {
+    //     font-size: 157px;
+    //     margin-top: calc(-22px + $nav-height +  $nav-margin-top);
 
-        div {
-            height: 157px;
-        }
-        .line-2 {
-            margin-top: -4px;
-        }
-    }
-    .hero__wrapper {
+    //     div {
+    //         height: 157px;
+    //     }
+    //     .line-2 {
+    //         margin-top: -4px;
+    //     }
+    // }
+    main .hero__wrapper {
         margin-top: 20px;
-        height: calc(40%);
+        height: calc(50%);
         max-height: 698px;
     }
 }

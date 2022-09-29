@@ -43,7 +43,7 @@ export default class TitleInitAnimation {
 
             },
             d: 750,
-            e: 'o2',
+            e: 'o3',
         })
         this.tl.from({
             el: N.get('.line-1'),
