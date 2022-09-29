@@ -43,7 +43,7 @@ export default class GalleryInitAnimation {
         })
         this.tl.from({
             d: duration,
-            e: 'o1',
+            e: 'io2',
             update: t => {
                 galleryContainers[2].style.height = N.Lerp(16, 20, t.progE) + 'rem'
                 // galleryContainers[0].style.width = N.Lerp(30, 100, t.progE) + '%'
@@ -51,7 +51,7 @@ export default class GalleryInitAnimation {
                 galleryImages[2].style.transform = `translate(-50%,-50%) scale(${N.Lerp(1.3, 1, t.progE)})`
             },
             // delay: 
-            d: 633,
+            d: 660,
             delay: 800,
             cb: _ => {
                 N.O(galleryImages[2], 0)
@@ -68,11 +68,11 @@ export default class GalleryInitAnimation {
         hero.style.width = '30%'
         hero.style.height = '20%'
 
-        // new N.Delay(_ => { N.O(hero, 1) }, 1300).run()
+        new N.Delay(_ => { N.O(hero, 1) }, 1300).run()
         this.tl.from({
             el: heroImg,
             // d: 900,
-            d: 1000,
+            d: 2000,
             delay: 1166,
             e: 'o6',
             update: t => {
