@@ -16,7 +16,7 @@ export default class GalleryInitAnimation {
             update: t => {
                 galleryContainers[0].style.height = N.Lerp(16, 20, t.progE) + 'rem'
                 // galleryContainers[0].style.width = N.Lerp(30, 100, t.progE) + '%'
-                N.O(galleryImages[0], t.progE)
+                N.O(galleryImages[0], t.prog)
                 galleryImages[0].style.transform = `translate(-50%,-50%) scale(${N.Lerp(1.3, 1, t.progE)})`
             },
             // delay: 
@@ -27,11 +27,11 @@ export default class GalleryInitAnimation {
         })
         this.tl.from({
             d: duration,
-            e: 'io2',
+            e: 'io3',
             update: t => {
                 galleryContainers[1].style.height = N.Lerp(16, 20, t.progE) + 'rem'
                 // galleryContainers[0].style.width = N.Lerp(30, 100, t.progE) + '%'
-                N.O(galleryImages[1], t.progE)
+                N.O(galleryImages[1], t.prog)
                 galleryImages[1].style.transform = `translate(-50%,-50%) scale(${N.Lerp(1.3, 1, t.progE)})`
             },
             // delay: 
@@ -43,11 +43,11 @@ export default class GalleryInitAnimation {
         })
         this.tl.from({
             d: duration,
-            e: 'io2',
+            e: 'io3',
             update: t => {
                 galleryContainers[2].style.height = N.Lerp(16, 20, t.progE) + 'rem'
                 // galleryContainers[0].style.width = N.Lerp(30, 100, t.progE) + '%'
-                N.O(galleryImages[2], t.progE)
+                N.O(galleryImages[2], t.prog)
                 galleryImages[2].style.transform = `translate(-50%,-50%) scale(${N.Lerp(1.3, 1, t.progE)})`
             },
             // delay: 

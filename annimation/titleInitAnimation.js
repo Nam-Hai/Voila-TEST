@@ -88,9 +88,9 @@ export default class TitleInitAnimation {
             p: {
                 y: [100, 0],
             },
-            d: 850,
-            e: 'o6',
-            delay: 350
+            d: 650,
+            e: 'ExpoOut',
+            delay: 400
         })
         let strat = N.get('.line-strategy__wrapper-translate')
         const d = 15

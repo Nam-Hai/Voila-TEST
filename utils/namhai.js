@@ -21,8 +21,31 @@ N.Ease = {
   i6: t => 0 === t ? 0 : 2 ** (10 * (t - 1)),
   o6: t => 1 === t ? 1 : 1 - 2 ** (-10 * t),
   io6: t => 0 === t ? 0 : 1 === t ? 1 : (t /= .5) < 1 ? .5 * 2 ** (10 * (t - 1)) : .5 * (2 - 2 ** (-10 * --t)),
+  ExpoOut: function (t) {
+    return 1 === t ? 1 : 1 - Math.pow(2, -10 * t)
+  },
+  CircOut: function (t) {
+    return Math.sqrt(1 - Math.pow(t - 1, 2))
+  },
 }
+N.complexEase = {
+  ExpoIn: function (t) {
+    return 0 === t ? 0 : Math.pow(2, 10 * (t - 1))
+  },
+  ExpoOut: function (t) {
+    return 1 === t ? 1 : 1 - Math.pow(2, -10 * t)
+  },
+  ExpoInOut: function (t) {
+    return 0 === t ? 0 : 1 === t ? 1 : (t /= .5) < 1 ? .5 * Math.pow(2, 10 * (t - 1)) : .5 * (2 - Math.pow(2, -10 * --t))
+  },
+  CircIn: function (t) {
+    return -(Math.sqrt(1 - t * t) - 1)
+  },
+  CircOut: function (t) {
+    return Math.sqrt(1 - Math.pow(t - 1, 2))
+  },
 
+}
 N.Lerp = function (xi, xf, t) {
   return (1 - t) * xi + t * xf
 };
